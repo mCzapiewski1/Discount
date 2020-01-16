@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Dodaj dyskont</title>
+</head>
+<body>
+<h1>Dodaj nowy dyskont</h1>
+<form th:action="@{/saveDiscount}" method="POST" th:object="${newDiscount}">
+	<input type="text" th:field="*{name}" placeholder="Nazwa dyskontu"/></br>
+	<input type="text" th:field="*{address1}" placeholder="Adres 1"/></br>
+	<input type="text" th:field="*{address2}" placeholder="Adres 2"/></br>
+	<input type="text" th:field="*{address3}" placeholder="Adres 3"/></br>
+	<input type="text" th:field="*{address4}" placeholder="Adres 4"/></br>
+	<input type="text" th:field="*{zip}" placeholder="Kod pocztowy"/></br>
+	<input type="text" th:field="*{phoneNumber}" placeholder="Numer telefonu"/></br>
+	<input type="email" th:field="*{email}" placeholder="Adres e-mail"/></br>
+	<input type="text" th:field="*{nip}" placeholder="Numer NIP"/></br>
+	<input type="submit" value="Zapisz" />
+</form>
+
+</body>
+</html>

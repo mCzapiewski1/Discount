@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Edytuj dyskont</title>
+</head>
+<body>
+	<h1 th:text="${editDiscount.name}"> AAA </h1>
+	
+	<form th:action="@{'/changeDiscount/' + ${editDiscount.id}}" method="POST" th:object="${editedDiscount}">
+		<input type="text" th:field="*{name}" value="${editDiscount.name}"/></br>
+		<input type="text" th:field="*{address1}" value="${editDiscount.address1}"/></br>
+		<input type="text" th:field="*{address2}" value="${editDiscount.address2}"/></br>
+		<input type="text" th:field="*{address3}" value="${editDiscount.address3}"/></br>
+		<input type="text" th:field="*{address4}" value="${editDiscount.address4}"/></br>
+		<input type="text" th:field="*{zip}" value="${editDiscount.zip}"/></br>
+		<input type="text" th:field="*{phoneNumber}" value="${editDiscount.phoneNumber}"/></br>
+		<input type="email" th:field="*{email}" value="${editDiscount.email}"/></br>
+		<input type="text" th:field="*{nip}" value="${editDiscount.nip}"/></br>
+		<input type="submit" value="Zapisz" />
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  </head>
+  <body>
+
+
+    <div class="login-box">
+    <form class="login-form" action="register.html" th:action="@{/saveUser}" th:object="${newUser}" method="post">
+
+      <h1>Rejestracja</h1>
+      <p th:if="${#fields.hasErrors('username')}"> Użytkownik już istnieje</p>
+      <p th:if="${#fields.hasErrors('password')}"> Hasła nie pasują do siebie</p>
+      Nazwa użytkownika <input class="txtb"  type="text" th:field="*{username}" name="Username" placeholder="" />
+      Hasło <input class="txtb" type="password" th:field="*{password}" name="Password" placeholder="" />
+   	  Powtórz hasło <input class="txtb" type="password" th:field="*{matchingPassword}" name="Password" placeholder="" />
+      Imię <input class="txtb" type="text" th:field="*{firstName}" name="first_name" placeholder="" />
+      Nazwisko <input class="txtb" type="text" th:field="*{lastName}" name="last_name" placeholder="" />
+      Adres e-mail <input class="txtb" type="email" th:field="*{email}" name="email" placeholder="" />
+      Data urodzenia <input class="txtb" type="date" th:field="*{birthDate}" name="birth_date" placeholder="" />
+      <input class="login-btn" type="submit" name="" value="Zarejestruj" />
+      <br />
+
+    <script type="text/javascript">
+      $(".login-box").toggleClass("showed");
+    </script>
+
+
+    </form>
+    </div>
+
+
+
+  </body>
+</html>

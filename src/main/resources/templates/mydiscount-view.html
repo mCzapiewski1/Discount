@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Moje dyskonty</title>
+</head>
+<body>
+<h1>Moje dyskonty</h1>
+</br></br></br>
+
+<table>
+	<tr>
+		<th>Nazwa</th>
+		<th>Adres1</th>
+		<th>Adres2</th>
+		<th>Adres3</th>
+		<th>Adres4</th>
+		<th>Zip</th>
+		<th>Numer telefonu</th>
+		<th>Email</th>
+		<th>NIP</th>
+		<th>Data założenia</th>
+		<th></th>
+	</tr>
+	<th:block th:each="discount : ${myDiscounts}">
+		<tr>
+			<td th:text="${discount.name}">SAMBLE TEKST</td>
+			<td th:text="${discount.address1}">SAMBLE TEKST</td>
+			<td th:text="${discount.address2}">SAMBLE TEKST</td>
+			<td th:text="${discount.address3}">SAMBLE TEKST</td>
+			<td th:text="${discount.address4}">SAMBLE TEKST</td>
+			<td th:text="${discount.zip}">SAMBLE TEKST</td>
+			<td th:text="${discount.phoneNumber}">SAMBLE TEKST</td>
+			<td th:text="${discount.email}">SAMBLE TEKST</td>
+			<td th:text="${discount.nip}">SAMBLE TEKST</td>
+			<td th:text="${discount.addDate}">SAMBLE TEKST</td>
+			<td><a th:href="@{'/editDiscount/' + ${discount.id}}">Edytuj</a></td>
+		</tr>
+	</th:block>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Zarejestruj sie</title>
+</head>
+<body>
+<h1>Rejestracja</h1>
+
+<form action="#" method="POST" th:action="@{/saveUser}" th:object="${newUser}">
+	<label>Login: </label>
+	<input type="text" th:field="*{username}" placeHolder="Login" />
+	<br />
+	<label>Haslo: </label>
+	<input type="password" th:field="*{password}" placeHolder="Password" />
+	<br />
+	<label>Pasujace haslo: </label>
+	<input type="password" th:field="*{matchingPassword}" placeHolder="Matching password" />
+	<br />
+	<label>Imie: </label>
+	<input type="text" th:field="*{firstName}" placeHolder="First name" />
+	<br />
+	<label>Nazwisko: </label>
+	<input type="text" th:field="*{lastName}" placeHolder="Last name" />
+	<br />
+</form>
+
+</body>
+</html>
